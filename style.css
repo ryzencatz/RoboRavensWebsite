@@ -1,9 +1,186 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen');
+@font-face { 
+  font-family: Linux Libertine;
+  src: url(https://actiniumn404.github.io/AoPS-Blog-CSS/assets/LinLibertineC_Re-4.0_.1_.woff);
+}
+
+/* variables */
+:root {
+  --dark-gold: #7f0404;
+  --gold: #9c1f34;
+  --gray: #ccc;
+} 
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    background-color:  lightblue;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color:  rgb(19, 19, 19);
+    font-family: 'Poppins';
+    color: rgb(211, 211, 211);
+    line-height: 1.7;
 }
 head {
     background-color: lightsalmon;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
 }
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem 1.5rem;
+}
+
+p {
+    font-family: 'inter', sans-serif;
+    max-width: 1000px;
+    font-size: 1rem;
+}
+h3 {
+    font-family: 'poppins';
+    font-size: 1.5rem;
+}
+
+/* Header */
+.logo {
+  font-weight: 700;
+  font-size: 25px;
+  color: var(--gold);
+  font-family: 'silkscreen';
+}
+
+header {
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 1rem 0 3rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav a {
+  font-size: 15px;
+}
+
+/* links */
+a {
+  color: var(--dark-gold);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* create the underline */
+a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;            /* normal position */
+  height: 3px;
+  width: 100%;
+  background: var(--dark-gold);
+  transition: bottom 0.3s ease, background 0.3s ease;
+}
+
+/* hover effect */
+a:hover {
+  color: var(--gold);
+}
+
+a:hover::after {
+  bottom: -6px;          /* move the line further down */
+  background: var(--gold); /* optional color change */
+}
+
+
+/* intro */
+.intro h2 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  color: var(--gray);
+  font-size: 1.1rem;
+  text-align: center;
+  font-family:Linux Libertine;
+}
+
+.typewriter-target {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0px;
+}
+
+.gray-text {
+  color: #fff !important;
+  font-family: poppins;
+}
+
+.gold-text {
+  color: var(--gold) !important;
+  font-weight: bolder;
+  font-family:silkscreen;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  animation: blink-caret 0.7s step-end infinite;
+  font-family:'Franklin Gothic Medium';
+  color: #fff !important;
+  font-weight: 300;
+  font-size: 50px;
+}
+
+@keyframes blink-caret {
+  from, to { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* sections */
+section {
+  margin-bottom: 4rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 4rem;
+}
+
+/* circuit bg */
+#circuit-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #000;
+}
+
+
